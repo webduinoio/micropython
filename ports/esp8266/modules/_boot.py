@@ -13,3 +13,5 @@ if bdev:
         inisetup.setup()
 
 gc.collect()
+import test
+# test.test()
