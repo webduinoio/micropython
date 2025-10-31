@@ -180,7 +180,7 @@ void machine_timer_enable(machine_timer_obj_t *self) {
     }
 
     timer_ll_enable_counter(self->hal_context.dev, self->index, false);
-    esp_clk_tree_enable_src(TIMER_CLK_SRC, true);
+    // esp_clk_tree_enable_src(TIMER_CLK_SRC, true);  // 在 ESP-IDF 5.3.1 中此函數不可用，時鐘源由 LL 層管理
     #if ESP_IDF_VERSION < ESP_IDF_VERSION_VAL(5, 5, 0)
     timer_ll_set_clock_source(self->hal_context.dev, self->index, TIMER_CLK_SRC);
     timer_ll_enable_clock(self->hal_context.dev, self->index, true);
