@@ -9,3 +9,6 @@
 
 #define MICROPY_HW_I2C0_SCL                 (9)
 #define MICROPY_HW_I2C0_SDA                 (8)
+
+// Disable I2C target mode due to ESP-IDF v5.3.1 API incompatibility
+#define MICROPY_PY_MACHINE_I2C_TARGET       (0)
